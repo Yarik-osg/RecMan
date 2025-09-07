@@ -14,9 +14,7 @@ A modern, responsive Kanban-style task management application built with React, 
 
 ## Live Demo
 
-🚀 **[View Live Demo](https://your-demo-url.com)** - See the application in action!
-
-*Note: Replace `https://your-demo-url.com` with your actual deployment URL*
+🚀 **[View Live Demo](https://rec-man-wheat.vercel.app)** - See the application in action!
 
 ## Prerequisites
 
@@ -48,25 +46,10 @@ npm run dev
 
 The application will be available at `http://localhost:5173` (or the next available port).
 
-### 4. Build for Production
-
-```bash
-npm run build
-```
-
-The built files will be in the `dist` directory.
-
-### 5. Preview Production Build
-
-```bash
-npm run preview
-```
 
 ## Available Scripts
 
 - `npm run dev` - Start the development server
-- `npm run build` - Build the application for production
-- `npm run preview` - Preview the production build locally
 - `npm run lint` - Run ESLint to check for code quality issues
 
 ## Technology Stack
@@ -74,7 +57,6 @@ npm run preview
 - **React 19** - Modern React with latest features
 - **TypeScript** - Type-safe JavaScript
 - **Vite** - Fast build tool and development server
-- **@atlaskit/pragmatic-drag-and-drop** - Smooth drag and drop functionality
 - **ESLint** - Code linting and quality assurance
 
 ## Project Structure
