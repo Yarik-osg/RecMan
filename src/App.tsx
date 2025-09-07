@@ -111,7 +111,7 @@ export default function App() {
     // ===== Column ops
     function addColumn() {
         const id = uid("col");
-        const title = `Колонка ${board.columnOrder.length + 1}`;
+        const title = `Column ${board.columnOrder.length + 1}`;
         setBoard((b) => ({
             ...b,
             columns: { ...b.columns, [id]: { id, title, taskIds: [] } },
@@ -267,14 +267,14 @@ export default function App() {
                 })}
                 {board.columnOrder.length === 0 && (
                     <div className="empty">
-                        <p>Немає колонок. Додай першу 👇</p>
-                        <button onClick={addColumn}>+ Створити колонку</button>
+                        <p>No columns. Add the first one 👇</p>
+                        <button onClick={addColumn}>+ Create column</button>
                     </div>
                 )}
             </main>
 
             <footer>
-                <small>Зберігається в LocalStorage • Double-click для редагування назв</small>
+                <small>Saved in LocalStorage • Double-click to edit names</small>
             </footer>
         </div>
     );
@@ -289,9 +289,9 @@ function seedBoard(): BoardState {
     const t2 = uid("task");
     const t3 = uid("task");
     const tasks: Record<string, Task> = {
-        [t1]: { id: t1, title: "Підготувати тестове завдання", completed: false },
-        [t2]: { id: t2, title: "Перевірити drag&drop між колонками", completed: false },
-        [t3]: { id: t3, title: "Написати документацію", completed: true },
+        [t1]: { id: t1, title: "Prepare test task", completed: false },
+        [t2]: { id: t2, title: "Check drag&drop between columns", completed: false },
+        [t3]: { id: t3, title: "Write documentation", completed: true },
     };
     const columns: Record<string, Column> = {
         [col1]: { id: col1, title: "To Do", taskIds: [t1, t2] },

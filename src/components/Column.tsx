@@ -90,7 +90,7 @@ export default function ColumnView(props: Props) {
                         <div className="actions">
                             <button onClick={() => onSelectAll(column.id, true)}>Select all</button>
                             <button onClick={() => onSelectAll(column.id, false)}>Clear</button>
-                            <button className="danger" onClick={() => onDeleteColumn(column.id)}>Видалити колонку</button>
+                            <button className="danger" onClick={() => onDeleteColumn(column.id)}>Delete column</button>
                         </div>
                     </>
                 ) : (
@@ -115,7 +115,7 @@ export default function ColumnView(props: Props) {
 
                     return (
                         <React.Fragment key={id}>
-                            {/* індикатор перед task */}
+                            {/* drop indicator before task */}
                             {dragOverIndex === idx && <div className="drop-indicator" />}
 
                             <TaskItem
@@ -140,7 +140,7 @@ export default function ColumnView(props: Props) {
                     );
                 })}
 
-                {/* індикатор в кінці списку */}
+                {/* drop indicator at the end of the list */}
                 {dragOverIndex === visibleTaskIds.length && <div className="drop-indicator" />}
             </div>
 
@@ -158,9 +158,9 @@ export default function ColumnView(props: Props) {
                 <input
                     value={newTitle}
                     onChange={(e) => setNewTitle(e.target.value)}
-                    placeholder="Нова задача…"
+                    placeholder="New task…"
                 />
-                <button type="submit">Додати</button>
+                <button type="submit">Add</button>
             </form>
         </div>
     );

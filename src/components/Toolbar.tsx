@@ -24,40 +24,40 @@ export default function Toolbar({
                 <input
                     value={query}
                     onChange={(e) => onQuery(e.target.value)}
-                    placeholder="Пошук задачі…"
+                    placeholder="Search task…"
                     aria-label="Search tasks"
                 />
                 <div className="filters">
                     <button
                         className={filter === "all" ? "active" : ""}
                         onClick={() => onFilter("all")}
-                    >Всі</button>
+                    >All</button>
                     <button
                         className={filter === "active" ? "active" : ""}
                         onClick={() => onFilter("active")}
-                    >Незавершені</button>
+                    >Active</button>
                     <button
                         className={filter === "completed" ? "active" : ""}
                         onClick={() => onFilter("completed")}
-                    >Завершені</button>
+                    >Completed</button>
                 </div>
             </div>
 
             <div className="right">
-                <button onClick={onAddColumn}>+ Колонка</button>
+                <button onClick={onAddColumn}>+ Column</button>
 
                 <div className="bulk" aria-label="Bulk actions">
-                    <span className="muted">Вибрано: {selectedCount}</span>
-                    <button disabled={!selectedCount} onClick={onCompleteSelected}>Позначити ✓</button>
-                    <button disabled={!selectedCount} onClick={onUncompleteSelected}>Зняти ✓</button>
-                    <button disabled={!selectedCount} onClick={onDeleteSelected}>Видалити</button>
+                    <span className="muted">Selected: {selectedCount}</span>
+                    <button disabled={!selectedCount} onClick={onCompleteSelected}>Mark ✓</button>
+                    <button disabled={!selectedCount} onClick={onUncompleteSelected}>Unmark ✓</button>
+                    <button disabled={!selectedCount} onClick={onDeleteSelected}>Delete</button>
                     <select
                         disabled={!selectedCount || columns.length === 0}
                         onChange={(e) => e.target.value && onMoveSelected(e.target.value)}
                         defaultValue=""
-                        title="Перемістити вибране до колонки"
+                        title="Move selected to column"
                     >
-                        <option value="" disabled>Перемістити в…</option>
+                        <option value="" disabled>Move to…</option>
                         {columns.map(c => <option key={c.id} value={c.id}>{c.title}</option>)}
                     </select>
                 </div>
