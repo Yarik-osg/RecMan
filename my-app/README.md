@@ -31,16 +31,22 @@ Before running this application locally, make sure you have the following instal
 
 ```bash
 git clone https://github.com/Yarik-osg/RecMan.git
-cd RecMan/my-app
+cd RecMan
 ```
 
-### 2. Install Dependencies
+### 2. Navigate to the Application Directory
+
+```bash
+cd my-app
+```
+
+### 3. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Start the Development Server
+### 4. Start the Development Server
 
 ```bash
 npm run dev
@@ -48,7 +54,7 @@ npm run dev
 
 The application will be available at `http://localhost:5173` (or the next available port).
 
-### 4. Build for Production
+### 5. Build for Production
 
 ```bash
 npm run build
@@ -56,7 +62,7 @@ npm run build
 
 The built files will be in the `dist` directory.
 
-### 5. Preview Production Build
+### 6. Preview Production Build
 
 ```bash
 npm run preview
@@ -80,16 +86,21 @@ npm run preview
 ## Project Structure
 
 ```
-src/
-├── components/          # React components
-│   ├── Column.tsx      # Column component
-│   ├── TaskItem.tsx    # Individual task component
-│   └── Toolbar.tsx     # Toolbar with search and filters
-├── App.tsx             # Main application component
-├── types.ts            # TypeScript type definitions
-├── storage.ts          # Local storage utilities
-├── utils.ts            # Helper functions
-└── styles.css          # Application styles
+RecMan/                 # Root repository directory
+└── my-app/             # Main application directory
+    ├── src/
+    │   ├── components/          # React components
+    │   │   ├── Column.tsx      # Column component
+    │   │   ├── TaskItem.tsx    # Individual task component
+    │   │   └── Toolbar.tsx     # Toolbar with search and filters
+    │   ├── App.tsx             # Main application component
+    │   ├── types.ts            # TypeScript type definitions
+    │   ├── storage.ts          # Local storage utilities
+    │   ├── utils.ts            # Helper functions
+    │   └── styles.css          # Application styles
+    ├── package.json            # Dependencies and scripts
+    ├── vite.config.ts          # Vite configuration
+    └── README.md               # This file
 ```
 
 ## Usage
