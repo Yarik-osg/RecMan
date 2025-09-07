@@ -40,6 +40,7 @@ export default function App() {
 
     function deleteTask(id: TaskId) {
         setBoard((b) => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const { [id]: _, ...restTasks } = b.tasks;
             const columns = Object.fromEntries(
                 Object.entries(b.columns).map(([cid, col]) => [
@@ -125,6 +126,7 @@ export default function App() {
             const tasks = { ...b.tasks };
             col.taskIds.forEach((t) => delete tasks[t]);
             // remove column
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
             const { [id]: _, ...restCols } = b.columns;
             return {
                 tasks,
