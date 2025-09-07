@@ -1,0 +1,229 @@
+:root { --bg:#0b0d12; --panel:#131721; --muted:#7b8496; --text:#e8ecf1; --accent:#4da3ff; --danger:#ff6b6b; --ok:#4dd4a3; }
+
+* {
+    box-sizing: border-box;
+}
+html, body, #root {
+    height: 100%;
+}
+body {
+    margin:0;
+    font: 14px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
+    background:var(--bg);
+    color:var(--text); }
+
+.app {
+    min-height:100%;
+    display:flex;
+    flex-direction:column;
+}
+
+header {
+    padding:16px 20px;
+    border-bottom:1px solid #1f2533;
+    background: linear-gradient(180deg, #0f1320, #0b0d12);
+}
+
+h1 {
+    margin:0;
+    font-size:18px;
+    letter-spacing:0.3px;
+}
+
+.toolbar-wrapper {
+    padding:12px 20px;
+    border-bottom:1px solid #1f2533;
+    background:#0f1422;
+}
+.toolbar {
+    display:flex;
+    gap:12px;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+.toolbar .left {
+    display:flex;
+    gap:12px;
+    align-items:center;
+}
+.toolbar .right {
+    display:flex;
+    gap:12px;
+    align-items:center;
+    flex-wrap:wrap;
+}
+.toolbar input {
+    background:#0b1120;
+    color:var(--text);
+    border:1px solid #1f2533;
+    border-radius:10px;
+    padding:8px 10px;
+    width:260px;
+}
+.toolbar .filters button.active {
+    background:var(--accent);
+    color:#001222;
+}
+.toolbar .filters button {
+    margin-right:6px;
+}
+
+button, .toolbar select {
+    background:#121829;
+    color:var(--text);
+    border:1px solid #253047;
+    border-radius:10px;
+    padding:8px 10px;
+    cursor:pointer;
+}
+button:hover {
+    border-color:#365080;
+}
+button.danger {
+    color:#ffd1d1;
+    border-color:#5a1d1d;
+    background:#241216;
+}
+button.danger:hover {
+    border-color:#8a2b2b;
+}
+.toolbar .bulk {
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
+.muted {
+    color:var(--muted);
+}
+
+.board {
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap:16px;
+    padding:16px 20px;
+    flex:1;
+}
+.column {
+    background:var(--panel);
+    border:1px solid #20283a;
+    border-radius:16px;
+    display:flex; flex-direction:column;
+    min-height:220px;
+}
+.column.dragging {
+    outline:2px dashed var(--accent);
+}
+.column-header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    padding:12px;
+    border-bottom:1px solid #20283a;
+}
+
+.column-header input {
+    width:100%;
+    background:#0b1120;
+    color:var(--text);
+    border:1px solid #1f2533;
+    border-radius:10px;
+    padding:8px 10px;
+}
+.column-header h3 {
+    margin: 0;
+    font-size: 16px;
+    flex: 1;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.column-header .actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.tasks {
+    padding:10px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+.task {
+    display:grid;
+    grid-template-columns: 18px 28px 1fr 28px;
+    gap:8px;
+    align-items:center;
+    background:#0f1422;
+    border:1px solid #1d2435;
+    border-radius:12px;
+    padding:8px;
+}
+.task.done {
+    opacity:0.7;
+    background: #154a11;
+}
+.task .tick {
+    border-radius:8px;
+}
+.task .title {
+    white-space:pre-wrap;
+    word-break:break-word;
+}
+.task mark {
+    background: rgba(77,163,255,.35);
+    color:inherit;
+    padding:0 2px;
+    border-radius:4px;
+}
+.task input[type="text"], .task input[type="checkbox"] {
+    cursor:pointer;
+}
+.task .delete {
+    color:#ffc6c6;
+}
+
+.add-task {
+    display:flex;
+    gap:8px;
+    padding:10px;
+    border-top:1px dashed #1f2740;
+}
+.add-task input {
+    flex:1;
+    background:#0b1120;
+    color:var(--text);
+    border:1px solid #1f2533;
+    border-radius:10px;
+    padding:8px 10px;
+    min-width: 0
+}
+
+.empty {
+    margin:auto;
+    text-align:center;
+    opacity:0.8;
+}
+
+.drop-indicator {
+    height: 4px;
+    margin: 2px 0;
+    background: #3b82f6; /* синя лінія */
+    border-radius: 2px;
+}
+
+footer {
+    padding:10px 20px;
+    color:var(--muted);
+    border-top:1px solid #1f2533;
+    background:#0f1422;
+}
+
+@media (max-width: 640px) {
+    .toolbar input { width: 100%; }
+    .board { grid-template-columns: 1fr; width: 20px }
+}

@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@atlaskit/pragmatic-drag-and-drop": "^1.7.6"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.1"
+  }
+}
